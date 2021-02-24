@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: gumatos <gumatos@42lisboa.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/18 23:09:09 by gumatos           #+#    #+#             */
-/*   Updated: 2021/02/24 19:27:17 by gumatos          ###   ########.fr       */
+/*   Created: 2021/02/24 16:54:38 by gumatos           #+#    #+#             */
+/*   Updated: 2021/02/24 16:55:30 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t a;
-
-	a = 0;
-	while (s[a])
-	{
-		a++;
-	}
-	return (a);
+	write(fd, &c, 1);
 }

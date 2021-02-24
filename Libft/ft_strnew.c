@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/18 23:09:09 by gumatos           #+#    #+#             */
-/*   Updated: 2021/02/24 19:27:17 by gumatos          ###   ########.fr       */
+/*   Created: 2021/02/24 19:14:53 by gumatos           #+#    #+#             */
+/*   Updated: 2021/02/24 19:15:58 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void		*ft_memalloc(size_t size)
 {
-	size_t a;
+	void *dest;
+	char *clean;
 
-	a = 0;
-	while (s[a])
+	dest = malloc(size);
+	clean = dest;
+	if (dest)
 	{
-		a++;
+		while (size != 0)
+		{
+			*clean++ = 0;
+			size--;
+		}
+		return (dest);
 	}
-	return (a);
+	else
+	{
+		return (NULL);
+	}
+}
+
+char		*ft_strnew(size_t size)
+{
+	return (ft_memalloc(size + 1));
 }

@@ -6,16 +6,11 @@
 /*   By: gumatos <gumatos@42lisboa.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 15:17:09 by gumatos           #+#    #+#             */
-/*   Updated: 2021/02/24 15:39:34 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/02/24 19:20:46 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char		*ft_strnew(size_t size)
-{
-	return (ft_memalloc(size + 1));
-}
 
 static int	ft_1(int n)
 {
@@ -37,7 +32,7 @@ static int	ft_1(int n)
 char		*ft_itoa(int n)
 {
 	char	*str;
-	int		a;
+	size_t	a;
 
 	a = ft_1(n);
 	str = ft_strnew(a);
@@ -48,7 +43,7 @@ char		*ft_itoa(int n)
 	if (n < 0)
 	{
 		str[0] = '-';
-		if (n = -2147483648)
+		if (n == -2147483648)
 		{
 			str[a-- - 1] = '8';
 			n /= 10;

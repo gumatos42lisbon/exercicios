@@ -6,7 +6,7 @@
 /*   By: gumatos <gumatos@42lisboa.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:55:53 by gumatos           #+#    #+#             */
-/*   Updated: 2021/02/24 15:25:25 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/02/24 19:17:38 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,34 +30,7 @@ char		*ft_strncpy(char *dest, const char *src, size_t len)
 	return (final);
 }
 
-void		*ft_memalloc(size_t size)
-{
-	void *dest;
-	char *clean;
-
-	dest = malloc(size);
-	clean = dest;
-	if (dest)
-	{
-		while (size != 0)
-		{
-			*clean++ = 0;
-			size--;
-		}
-		return (dest);
-	}
-	else
-	{
-		return (NULL);
-	}
-}
-
-char		*ft_strnew(size_t size)
-{
-	return (ft_memalloc(size + 1));
-}
-
-static int	list(char const *s, char c)
+static int	ft_list(char const *s, char c)
 {
 	int a;
 
@@ -84,6 +57,9 @@ char		**ft_split(char const *s, char c)
 
 	if (s == NULL)
 		return (NULL);
+	list = (char**)malloc(sizeof(char*) * ft_list(s, c));
+	if (!list)
+		return (NULL);
 	b = 0;
 	while (*s != 0)
 	{
@@ -98,6 +74,6 @@ char		**ft_split(char const *s, char c)
 		else
 			s++;
 	}
-	list[b] = 0;
+	list[b] = NULL;
 	return (list);
 }

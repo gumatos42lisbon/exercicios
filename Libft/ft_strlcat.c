@@ -6,24 +6,11 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 15:08:07 by gumatos           #+#    #+#             */
-/*   Updated: 2021/02/22 16:39:03 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/02/24 19:24:44 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
-size_t	ft_strlen(const char *s)
-{
-	size_t a;
-
-	a = 0;
-	while (s[a])
-	{
-		a++;
-	}
-	return (a);
-}
+#include "libft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {

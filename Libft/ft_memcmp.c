@@ -6,7 +6,7 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 16:31:31 by gumatos           #+#    #+#             */
-/*   Updated: 2021/02/18 21:29:47 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/02/24 17:55:54 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,5 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	{
 		return (*a - *b);
 	}
+	return (0);
 }
