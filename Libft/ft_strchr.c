@@ -5,23 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/22 16:41:15 by gumatos           #+#    #+#             */
-/*   Updated: 2021/02/22 17:00:27 by gumatos          ###   ########.fr       */
+/*   Created: 2021/02/26 14:32:28 by gumatos           #+#    #+#             */
+/*   Updated: 2021/02/26 14:32:30 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *str, int ch)
+char	*ft_strchr(const char *s, int c)
 {
-	while (*str)
-	{
-		if (*str == ch)
-		{
-			return ((char*)str);
-		}
-		str++;
-	}
-	return (0);
+	return (ft_memchr(s, c, ft_strlen(s) + 1));
 }

@@ -6,7 +6,7 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 16:20:32 by gumatos           #+#    #+#             */
-/*   Updated: 2021/02/24 19:23:42 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/03/05 14:43:05 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,14 @@ void				*ft_memccpy(void *dest, const void *src,
 						int c, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
+void				*ft_calloc(size_t a, size_t n);
 char				*ft_strnew(size_t size);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t				ft_strlen(const char *s);
 char				*ft_strdup(const char *s1);
 size_t				ft_strlcat(char *dest, const char *src,
 						size_t n);
+size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 char				*ft_strchr(const char *str, int ch);
 char				*ft_strrchr(const char *str, int c);
 char				*ft_strnstr(const char *big, const char *little,
@@ -53,6 +55,7 @@ int					ft_toupper(int c);
 /*
 ** second
 */
+char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
@@ -65,12 +68,15 @@ void				ft_putnbr_fd(int n, int fd);
 /*
 ** bonus
 */
-/*
-**t_list				*ft_lstnew(void const *content, size_t content_size);
-**void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
-**void				ft_lstdel(t_list **alst, void (*del)(void*, size_t));
-**void				ft_lstadd(t_list **alst, t_list *new);
-**void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-**t_list				*ft_lstmap(t_list *lst, t_list *(*f) (t_list *elem));
-*/
+t_list				*ft_lstnew(void *content);
+void				ft_lstadd_front(t_list **lst, t_list *new);
+int					ft_lstsize(t_list *lst);
+t_list				*ft_lstlast(t_list *lst);
+void				ft_lstadd_back(t_list **lst, t_list *new);
+
+void				ft_lstdelone(t_list *lst, void (*del)(void*));
+void				ft_lstclear(t_list **lst, void (*del)(void*));
+void				ft_lstiter(t_list *lst, void (*f)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f) (void *),
+														void (*del)(void *));
 #endif

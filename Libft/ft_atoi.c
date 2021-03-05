@@ -5,34 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/23 17:04:40 by gumatos           #+#    #+#             */
-/*   Updated: 2021/02/23 23:15:16 by gumatos          ###   ########.fr       */
+/*   Created: 2021/03/02 14:55:29 by gumatos           #+#    #+#             */
+/*   Updated: 2021/03/02 16:20:56 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	int a;
-	int b;
+	int		i;
+	int		nbr;
+	int		isneg;
 
-	a = 0;
-	b = 1;
-	while ((*str >= '0' && *str <= '9') || *str == '\t' || *str == '\n' ||
-			*str == '\v' || *str == '\f' || *str == '\r' || *str == ' ' ||
-					*str == '-' || *str == '+')
+	i = 0;
+	nbr = 0;
+	isneg = 0;
+	while (str[i] != '\0' && (str[i] == 32 || str[i] == '\t' || str[i] == '\n'
+			|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f'))
+		i++;
+	if (str[i] != '\0' && str[i] == '-')
 	{
-		if (*str == '-')
-		{
-			b = b * -1;
-		}
-		else if (*str >= '0' && *str <= '9')
-		{
-			a = a * 10 + (*str - '0');
-		}
-		str++;
+		isneg = 1;
+		i++;
 	}
-	return (a * b);
+	else if (str[i] == '+')
+		i++;
+	while (str[i] != '\0' && ft_isdigit(str[i]))
+		nbr = (nbr * 10) + (str[i++] - '0');
+	if (isneg == 1)
+		return (-nbr);
+	return (nbr);
 }

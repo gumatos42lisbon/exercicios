@@ -6,7 +6,7 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 10:05:30 by gumatos           #+#    #+#             */
-/*   Updated: 2021/02/24 10:39:18 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/03/02 18:59:22 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	b;
 	char	*str;
 
-	str = (char*)malloc(sizeof(*s) * (len + 1));
-	if (!str)
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	str = malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
 		return (NULL);
 	a = 0;
 	b = 0;
