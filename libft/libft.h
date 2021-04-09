@@ -6,7 +6,7 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 16:20:32 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/07 14:52:48 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/09 14:05:28 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ char				*ft_u_itoa(unsigned int n);
 int					ft_treat_hexa(unsigned int ui, int lower,
 													t_flags flags);
 /*
-int					ft_printf(const char *entrada, ...);
+**int					ft_printf(const char *entrada, ...);
 */
 
 t_flags				ft_flag_negativo(t_flags flags);

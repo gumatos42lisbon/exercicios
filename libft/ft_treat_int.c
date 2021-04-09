@@ -6,11 +6,19 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 15:59:24 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/08 16:57:35 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/09 14:05:19 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int			ft_flag_zero(t_flags flags)
+{
+	if (flags.estrela == 1 && flags.negativo == 1)
+		return (0);
+	else
+		return (1);
+}
 
 static int	ft_in_put_part_int(char *a, int save_i, t_flags flags)
 {
@@ -48,9 +56,9 @@ static int	ft_put_part_int(char *a, int save_i, t_flags flags)
 
 int			ft_treat_int(int i, t_flags flags)
 {
-	char	*a;
-	int		save_i;
-	int		contador;
+	char				*a;
+	unsigned int		save_i;
+	int					contador;
 
 	save_i = i;
 	contador = 0;
@@ -64,11 +72,11 @@ int			ft_treat_int(int i, t_flags flags)
 		if (flags.zero == 1 && flags.ponto == -1)
 			ft_putstrprec("-", 1);
 		i *= -1;
-		flags.zero = 1;
+		flags.zero = ft_flag_zero(flags);
 		flags.largura--;
 		contador++;
 	}
-	a = ft_itoa(i);
+	a = ft_u_itoa(i);
 	contador += ft_put_part_int(a, save_i, flags);
 	free(a);
 	return (contador);
