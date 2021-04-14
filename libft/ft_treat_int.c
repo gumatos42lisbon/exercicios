@@ -6,7 +6,7 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 15:59:24 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/09 14:05:19 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/14 18:11:16 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int			ft_treat_int(int i, t_flags flags)
 	}
 	if (i < 0 && (flags.ponto >= 0 || flags.zero == 1))
 	{
-		if (flags.zero == 1 && flags.ponto == -1)
+		if (flags.zero == 1 && flags.ponto <= -1)
 			ft_putstrprec("-", 1);
 		i *= -1;
 		flags.zero = ft_flag_zero(flags);

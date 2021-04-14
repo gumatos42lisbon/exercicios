@@ -5,73 +5,53 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/06 17:35:55 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/06 17:38:28 by gumatos          ###   ########.fr       */
+/*   Created: 2021/04/12 17:12:45 by gumatos           #+#    #+#             */
+/*   Updated: 2021/04/12 17:13:55 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_estim(long n)
+int			ft_contadordigitos(long n)
 {
-	size_t	estim;
-	int		isneg;
+	int a;
 
-	estim = 0;
-	isneg = 0;
-	if (n < 0)
-	{
-		estim++;
-		isneg++;
-		n = -n;
-	}
+	a = 0;
 	while (n >= 1)
 	{
-		estim++;
 		n /= 10;
+		a++;
 	}
-	return (estim);
+	return (a);
 }
 
-static char		*ft_gen(char *rtn, long nbr, int len, int isneg)
+char		*ft_itoa_gu(char *str, long nbr, int a)
 {
 	if (nbr != 0)
-		rtn = malloc(sizeof(char) * (len + 1));
+		str = malloc(sizeof(char) * (a + 1));
 	else
-		return (rtn = ft_strdup("0"));
-	if (!rtn)
+		return (str = ft_strdup("0"));
+	if (!str)
 		return (0);
-	isneg = 0;
-	if (nbr < 0)
+	str[a] = '\0';
+	while (--a >= 0)
 	{
-		isneg++;
-		nbr = -nbr;
-	}
-	rtn[len] = '\0';
-	while (--len)
-	{
-		rtn[len] = (nbr % 10) + '0';
+		str[a] = (nbr % 10) + '0';
 		nbr /= 10;
 	}
-	if (isneg == 1)
-		rtn[0] = '-';
-	else
-		rtn[0] = (nbr % 10) + '0';
-	return (rtn);
+	return (str);
 }
 
-char			*ft_u_itoa(unsigned int n)
+char		*ft_u_itoa(unsigned int n)
 {
-	int		len;
-	char	*rtn;
+	int		a;
+	char	*str;
 	long	nbr;
-	int		isneg;
 
 	nbr = n;
-	len = ft_estim(nbr);
-	rtn = 0;
-	isneg = 0;
-	if (!(rtn = ft_gen(rtn, nbr, len, isneg)))
+	a = ft_contadordigitos(nbr);
+	str = 0;
+	if (!(str = ft_itoa_gu(str, nbr, a)))
 		return (0);
-	return (rtn);
+	return (str);
 }

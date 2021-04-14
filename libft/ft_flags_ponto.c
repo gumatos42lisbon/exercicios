@@ -6,7 +6,7 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 12:37:14 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/08 19:48:59 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/14 18:11:09 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int			ft_flags_ponto(const char *save, int start,
 	if (save[i] == '*')
 	{
 		flags->ponto = va_arg(args, int);
+		flags->zero = 1;
 		i++;
 	}
 	else
