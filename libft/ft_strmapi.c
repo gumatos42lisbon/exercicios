@@ -6,7 +6,7 @@
 /*   By: gumatos <gumatos@42lisboa.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 16:41:23 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/07 13:34:54 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 16:07:59 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char		*a;
-	unsigned	b;
+	char			*a;
+	unsigned int	b;
 
 	b = 0;
 	if (f && s)

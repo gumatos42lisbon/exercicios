@@ -6,20 +6,20 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 12:37:14 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/14 18:11:09 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 15:50:49 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_flags		ft_flag_negativo(t_flags flags)
+t_flags	ft_flag_negativo(t_flags flags)
 {
 	flags.negativo = 1;
 	flags.zero = 0;
 	return (flags);
 }
 
-t_flags		ft_flag_digit(char c, t_flags flags)
+t_flags	ft_flag_digit(char c, t_flags flags)
 {
 	if (flags.estrela == 1)
 		flags.largura = 0;
@@ -27,7 +27,7 @@ t_flags		ft_flag_digit(char c, t_flags flags)
 	return (flags);
 }
 
-t_flags		ft_flag_largura(va_list args, t_flags flags)
+t_flags	ft_flag_largura(va_list args, t_flags flags)
 {
 	flags.estrela = 1;
 	flags.largura = va_arg(args, int);
@@ -39,10 +39,10 @@ t_flags		ft_flag_largura(va_list args, t_flags flags)
 	return (flags);
 }
 
-int			ft_flags_ponto(const char *save, int start,
+int	ft_flags_ponto(const char *save, int start,
 			t_flags *flags, va_list args)
 {
-	int i;
+	int	i;
 
 	i = start;
 	i++;

@@ -6,15 +6,15 @@
 /*   By: gumatos <gumatos@42lisboa.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:55:53 by gumatos           #+#    #+#             */
-/*   Updated: 2021/02/24 19:17:38 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 16:06:37 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dest, const char *src, size_t len)
+char	*ft_strncpy(char *dest, const char *src, size_t len)
 {
-	char *final;
+	char	*final;
 
 	final = dest;
 	while (*src != 0 && len > 0)
@@ -32,7 +32,7 @@ char		*ft_strncpy(char *dest, const char *src, size_t len)
 
 static int	ft_list(char const *s, char c)
 {
-	int a;
+	int	a;
 
 	a = 0;
 	if (*s != c && *s != 0)
@@ -49,7 +49,7 @@ static int	ft_list(char const *s, char c)
 	return (a + 1);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	unsigned int		a;
 	unsigned int		b;
@@ -57,7 +57,7 @@ char		**ft_split(char const *s, char c)
 
 	if (s == NULL)
 		return (NULL);
-	list = (char**)malloc(sizeof(char*) * ft_list(s, c));
+	list = (char **)malloc(sizeof(char *) * ft_list(s, c));
 	if (!list)
 		return (NULL);
 	b = 0;

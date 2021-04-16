@@ -6,7 +6,7 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 16:20:32 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/12 14:52:49 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 16:28:01 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-typedef	struct		s_flags
+typedef struct s_flags
 {
 	int				already_print;
 	int				tipo;
@@ -27,9 +27,9 @@ typedef	struct		s_flags
 	int				zero;
 	int				ponto;
 	int				estrela;
-}					t_flags;
+}	t_flags;
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	size_t			content_size;
@@ -78,7 +78,7 @@ int					ft_treat_largura(int largura, int negativo, int has_zero);
 int					ft_treat_percent(t_flags flags);
 int					ft_treatment(int c, t_flags flags, va_list args);
 int					ft_flags_ponto(const char *save, int start,
-												t_flags *flags, va_list args);
+						t_flags *flags, va_list args);
 int					ft_printf(const char *entrada, ...);
 int					ft_is_in_type_list(int c);
 int					ft_is_in_flags_list(int c);
@@ -89,7 +89,7 @@ int					ft_treat_int(int i, t_flags flags);
 int					ft_treat_unit(unsigned int unit, t_flags flags);
 char				*ft_u_itoa(unsigned int n);
 int					ft_treat_hexa(unsigned int ui, int lower,
-													t_flags flags);
+						t_flags flags);
 /*
 **int					ft_printf(const char *entrada, ...);
 */
@@ -126,5 +126,5 @@ void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f) (void *),
-														void (*del)(void *));
+						void (*del)(void *));
 #endif

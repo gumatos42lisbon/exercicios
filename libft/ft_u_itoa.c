@@ -6,15 +6,15 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 17:12:45 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/12 17:13:55 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 16:23:26 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_contadordigitos(long n)
+int	ft_contadordigitos(long n)
 {
-	int a;
+	int	a;
 
 	a = 0;
 	while (n >= 1)
@@ -25,7 +25,7 @@ int			ft_contadordigitos(long n)
 	return (a);
 }
 
-char		*ft_itoa_gu(char *str, long nbr, int a)
+char	*ft_itoa_gu(char *str, long nbr, int a)
 {
 	if (nbr != 0)
 		str = malloc(sizeof(char) * (a + 1));
@@ -42,7 +42,7 @@ char		*ft_itoa_gu(char *str, long nbr, int a)
 	return (str);
 }
 
-char		*ft_u_itoa(unsigned int n)
+char	*ft_u_itoa(unsigned int n)
 {
 	int		a;
 	char	*str;
@@ -51,7 +51,8 @@ char		*ft_u_itoa(unsigned int n)
 	nbr = n;
 	a = ft_contadordigitos(nbr);
 	str = 0;
-	if (!(str = ft_itoa_gu(str, nbr, a)))
+	str = ft_itoa_gu(str, nbr, a);
+	if (!str)
 		return (0);
 	return (str);
 }

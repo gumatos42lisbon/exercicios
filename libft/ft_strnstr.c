@@ -6,7 +6,7 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 23:20:51 by gumatos           #+#    #+#             */
-/*   Updated: 2021/02/23 16:16:24 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 16:09:03 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t n)
 {
-	size_t a;
-	size_t b;
+	size_t	a;
+	size_t	b;
 
 	if (*little == '\0')
 	{

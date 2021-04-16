@@ -6,13 +6,13 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 19:14:53 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/07 13:32:51 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 16:08:33 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strnew(size_t size)
+char	*ft_strnew(size_t size)
 {
 	return (ft_memalloc(size + 1));
 }

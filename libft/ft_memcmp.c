@@ -6,17 +6,16 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 16:31:31 by gumatos           #+#    #+#             */
-/*   Updated: 2021/02/24 17:55:54 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 16:02:41 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char *a;
-	unsigned char *b;
+	unsigned char	*a;
+	unsigned char	*b;
 
 	a = (unsigned char *)s1;
 	b = (unsigned char *)s2;

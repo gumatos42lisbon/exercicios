@@ -6,7 +6,7 @@
 /*   By: gumatos <gumatos@42lisboa.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 12:13:24 by gumatos           #+#    #+#             */
-/*   Updated: 2021/03/02 14:12:21 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 16:13:47 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1);
 	while (end > start && ft_1(s1[end - 1], set))
 		end--;
-	str = (char*)malloc(sizeof(*s1) * (end - start + 1));
+	str = (char *)malloc(sizeof(*s1) * (end - start + 1));
 	if (!str)
 		return (NULL);
 	a = 0;

@@ -6,27 +6,27 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 16:54:35 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/06 17:50:13 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 16:20:26 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_in_put_part_unit(char *unit_int, t_flags flags)
+static int	ft_in_put_part_unit(char *unit_int, t_flags flags)
 {
-	int		contador;
+	int	contador;
 
 	contador = 0;
 	if (flags.ponto >= 0)
 		contador += ft_treat_largura(flags.ponto - 1,
-									ft_strlen(unit_int) - 1, 1);
+				ft_strlen(unit_int) - 1, 1);
 	contador += ft_putstrprec(unit_int, ft_strlen(unit_int));
 	return (contador);
 }
 
-static int		ft_put_unit(char *unit_int, t_flags flags)
+static int	ft_put_unit(char *unit_int, t_flags flags)
 {
-	int		contador;
+	int	contador;
 
 	contador = 0;
 	if (flags.negativo == 1)
@@ -46,7 +46,7 @@ static int		ft_put_unit(char *unit_int, t_flags flags)
 	return (contador);
 }
 
-int				ft_treat_unit(unsigned int unit, t_flags flags)
+int	ft_treat_unit(unsigned int unit, t_flags flags)
 {
 	char	*unit_int;
 	int		contador;

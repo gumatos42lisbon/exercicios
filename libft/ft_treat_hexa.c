@@ -6,15 +6,15 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 17:58:59 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/06 18:06:25 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 16:15:59 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_in_put_part_hexa(char *hexa, t_flags flags)
+static int	ft_in_put_part_hexa(char *hexa, t_flags flags)
 {
-	int contador;
+	int	contador;
 
 	contador = 0;
 	if (flags.ponto >= 0)
@@ -23,9 +23,9 @@ static int		ft_in_put_part_hexa(char *hexa, t_flags flags)
 	return (contador);
 }
 
-static int		ft_put_part_hexa(char *hexa, t_flags flags)
+static int	ft_put_part_hexa(char *hexa, t_flags flags)
 {
-	int contador;
+	int	contador;
 
 	contador = 0;
 	if (flags.negativo == 1)
@@ -39,20 +39,20 @@ static int		ft_put_part_hexa(char *hexa, t_flags flags)
 	}
 	else
 		contador += ft_treat_largura(flags.largura,
-		ft_strlen(hexa), flags.zero);
+				ft_strlen(hexa), flags.zero);
 	if (flags.negativo == 0)
 		contador += ft_in_put_part_hexa(hexa, flags);
 	return (contador);
 }
 
-int				ft_treat_hexa(unsigned int ui, int lower, t_flags flags)
+int	ft_treat_hexa(unsigned int ui, int lower, t_flags flags)
 {
 	char	*hexa;
 	int		contador;
 
 	contador = 0;
 	ui = (unsigned int)(4294967295 + 1
-				+ ui);
+			+ ui);
 	if (flags.ponto == 0 && ui == 0)
 	{
 		contador += ft_treat_largura(flags.largura, 0, 0);

@@ -6,15 +6,15 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 12:36:10 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/12 14:53:03 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 16:14:19 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_treat_char(char c, t_flags flags)
+int	ft_treat_char(char c, t_flags flags)
 {
-	int char_count;
+	int	char_count;
 
 	char_count = 0;
 	if (flags.negativo == 1)

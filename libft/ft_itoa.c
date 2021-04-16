@@ -6,7 +6,7 @@
 /*   By: gumatos <gumatos@42lisboa.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 15:17:09 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/09 14:06:27 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 15:54:04 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_1(int n)
 {
-	int a;
+	int	a;
 
 	a = 0;
 	if (n < 0)
@@ -29,7 +29,7 @@ static int	ft_1(int n)
 	return (a);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*str;
 	size_t	a;

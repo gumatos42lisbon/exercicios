@@ -6,13 +6,13 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 13:10:47 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/07 13:29:28 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 16:04:06 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_putchar(int c)
+int	ft_putchar(int c)
 {
 	ft_putchar_fd(c, 1);
 	return (1);

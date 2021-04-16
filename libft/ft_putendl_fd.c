@@ -6,7 +6,7 @@
 /*   By: gumatos <gumatos@42lisboa.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 16:58:18 by gumatos           #+#    #+#             */
-/*   Updated: 2021/02/24 18:02:34 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 16:04:33 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	char a;
+	char	a;
 
 	if (s)
 	{

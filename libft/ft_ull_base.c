@@ -6,7 +6,7 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 15:16:59 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/06 17:47:53 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 16:25:28 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static char	*treat_base(unsigned long long ull_save,
 	return (rtn);
 }
 
-char		*ft_ull_base(unsigned long long ull, int base)
+char	*ft_ull_base(unsigned long long ull, int base)
 {
 	char				*rtn;
 	unsigned long long	ull_save;
@@ -43,7 +43,8 @@ char		*ft_ull_base(unsigned long long ull, int base)
 		ull /= base;
 		contador++;
 	}
-	if (!(rtn = malloc(sizeof(char) * (contador + 1))))
+	rtn = malloc(sizeof(char) * (contador + 1));
+	if (!rtn)
 		return (0);
 	rtn[contador] = '\0';
 	rtn = treat_base(ull_save, base, rtn, contador);

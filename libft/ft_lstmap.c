@@ -6,7 +6,7 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 14:23:54 by gumatos           #+#    #+#             */
-/*   Updated: 2021/03/05 14:29:11 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 15:56:18 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst || !f)
 		return (NULL);
-	if (!(retorno = ft_lstnew(f(lst->content))))
+	retorno = ft_lstnew(f(lst->content));
+	if (!retorno)
 		return (NULL);
 	lst = lst->next;
 	temp = retorno;

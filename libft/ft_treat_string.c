@@ -6,7 +6,7 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 12:09:46 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/07 14:50:11 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 16:19:32 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_put_part_int(char *str, t_flags flags)
 	return (contador);
 }
 
-int			ft_treat_string(char *str, t_flags flags)
+int	ft_treat_string(char *str, t_flags flags)
 {
 	int	contador;
 

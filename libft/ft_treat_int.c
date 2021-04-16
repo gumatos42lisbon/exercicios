@@ -6,13 +6,13 @@
 /*   By: gumatos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 15:59:24 by gumatos           #+#    #+#             */
-/*   Updated: 2021/04/14 18:11:16 by gumatos          ###   ########.fr       */
+/*   Updated: 2021/04/16 16:17:03 by gumatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_flag_zero(t_flags flags)
+int	ft_flag_zero(t_flags flags)
 {
 	if (flags.estrela == 1 && flags.negativo == 1)
 		return (0);
@@ -22,11 +22,16 @@ int			ft_flag_zero(t_flags flags)
 
 static int	ft_in_put_part_int(char *a, int save_i, t_flags flags)
 {
-	int contador;
+	int	contador;
 
 	contador = 0;
 	if (save_i < 0 && flags.ponto >= 0)
-		ft_putchar('-');
+	{
+		if (save_i == -2147483648)
+			ft_putchar(' ');
+		else
+			ft_putchar('-');
+	}
 	if (flags.ponto >= 0)
 		contador += ft_treat_largura(flags.ponto - 1, ft_strlen(a) - 1, 1);
 	contador += ft_putstrprec(a, ft_strlen(a));
@@ -35,7 +40,7 @@ static int	ft_in_put_part_int(char *a, int save_i, t_flags flags)
 
 static int	ft_put_part_int(char *a, int save_i, t_flags flags)
 {
-	int		contador;
+	int	contador;
 
 	contador = 0;
 	if (flags.negativo == 1)
@@ -54,7 +59,7 @@ static int	ft_put_part_int(char *a, int save_i, t_flags flags)
 	return (contador);
 }
 
-int			ft_treat_int(int i, t_flags flags)
+int	ft_treat_int(int i, t_flags flags)
 {
 	char				*a;
 	unsigned int		save_i;
@@ -76,7 +81,7 @@ int			ft_treat_int(int i, t_flags flags)
 		flags.largura--;
 		contador++;
 	}
-	a = ft_u_itoa(i);
+	a = ft_itoa(i);
 	contador += ft_put_part_int(a, save_i, flags);
 	free(a);
 	return (contador);
